@@ -1,0 +1,15 @@
+
+<div>
+    <h2>Get Weather Data</h2>
+    <input type="text" [(ngModel)]="queryParameter" placeholder="Enter City Name" />
+    <button (click)="getWeatherData()">Get Weather</button>
+  </div>
+  
+  <div *ngIf="weatherData">
+    <h2>Weather Data</h2>
+    <pre>{{ weatherData | json }}</pre>
+  </div>
+  <div *ngIf="!weatherData && hasSearched">
+    <h2>No Weather Data Found</h2>
+  </div>
+  
